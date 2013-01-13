@@ -1,0 +1,48 @@
+<tool id="PICRUSt_predict" name="Predict" version="1.0.1">
+<description>picrust</description>
+<command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/predict_metagenomes.py 
+-i $inp_data
+-o $out_file1
+#if str( $input_type ) == "f":
+	-$input_type	
+#end if
+#if str( $tool_option1 ) == "2":
+	-a $out_file2	
+#end if
+
+</command>
+  <inputs>
+	<param format="picrustn" name="inp_data" type="data" label="Input file"/>
+        <param name="input_type" type="select" multiple="True" display="checkboxes" label="Format of the output file">
+		<option value="f">Legacy QIIME format(tab-delimited)</option>
+	</param>
+	<param name="tool_option1" type="select" label="Type of output">
+	           <option value="1">Single File: Predictions</option>
+	           <option value="2">Two Files: Predictions + Summary</option>
+       	</param>
+  </inputs>
+  <outputs>
+ 	<data format="picrustp" name="out_file1" />
+        <data  format="picrustp" name="out_file2">
+               <filter>tool_option1 == "2"</filter>
+        </data>
+  </outputs>
+  <help>
+Run PICRUSt: Prediction of Metagenomes
+--------------------------------------
+
+A brief description of the Predictions module.
+
+**Input file:**
+This should be populated by the output of the Normalization OTUs module.
+
+For more information please visit 
+
+Citation and Contacts
+---------------------
+
+When using PICRUSt please cite:
+
+Please feel free to contact us at  for any questions or comments!
+ </help>
+</tool>

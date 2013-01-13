@@ -1,0 +1,55 @@
+<tool id="PICRUSt_normalize" name="Normalize" version="1.0.1">
+<description>picrust</description>
+<command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/normalize_by_copy_number.py 
+-i /$inp_data 
+-o $out_file1
+#if str( $input_type ) == "f":
+	-$input_type	
+#end if
+
+2> /dev/null	
+
+</command>
+  <inputs>
+	<param format="picrust" name="inp_data" type="data" label="Input file"/>
+	 <param name="input_type" type="select" multiple="True" display="checkboxes" label="Format of the input file">
+ 		<option value="f">Legacy QIIME format(tab-delimited)</option>
+	</param>
+  </inputs>
+
+  <outputs>
+    <data format="picrustn" name="out_file1" />
+  </outputs>
+
+  <help>
+PICRUSt: Phylogenetic Investigation of Communities by Reconstruction of Unobserved States
+-----------------------------------------------------------------------------------------
+The PICRUSt project aims to support prediction of the unobserved character states in a community of organisms from phylogenetic information about the organisms in that community. The primary application is to predict gene family abundance (e.g. the metagenome) in environmental DNA samples for which only marker gene (e.g. 16S rRNA gene) data are available. This is an open source, international, collaborative bioinformatics project developed in the Huttenhower, Beiko, Langille, Vega Thurber, Knight and Caporaso labs.
+
+**First Step**
+--------------
+Please **upload your input file** using the Standard Galaxy Upload Utility. (Get Data / Upload File from your computer)
+Be sure to select **File Format: picrust**
+
+**Second Step**
+---------------
+Run the PICRUSt Normalization by Number Module (This panel)
+
+**Thid Step**
+---------------
+Run the PICRUSt Prediction of Metagenomes Module
+
+
+A brief description of the Run Normalization module:
+----------------------------------------------------
+
+For more information please visit:
+----------------------------------
+
+Citation and Contacts:
+----------------------
+When using PICRUSt please cite:
+
+Please feel free to contact us at  for any questions or comments!
+ </help>
+</tool>
