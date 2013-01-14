@@ -1,5 +1,5 @@
-<tool id="PICRUSt_predict" name="Predict" version="1.0.1">
-<description>picrust</description>
+<tool id="PICRUSt_predict" name="Predict Metagenome" version="0.9.0">
+<description></description>
 <command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/predict_metagenomes.py 
 -i $inp_data
 -o $out_file1
@@ -10,15 +10,17 @@
 	-a $out_file2	
 #end if
 
+--suppress_subset_loading
+
 </command>
   <inputs>
 	<param format="picrustn" name="inp_data" type="data" label="Input file"/>
-        <param name="input_type" type="select" multiple="True" display="checkboxes" label="Format of the output file">
-		<option value="f">Legacy QIIME format(tab-delimited)</option>
+        <param name="input_type" type="select" multiple="True" display="checkboxes" label="Format of the output file (default is BIOM)">
+		<option value="f">Legacy QIIME format (tab-delimited)</option>
 	</param>
 	<param name="tool_option1" type="select" label="Type of output">
-	           <option value="1">Single File: Predictions</option>
-	           <option value="2">Two Files: Predictions + Summary</option>
+	           <option value="1">Metagenome Predictions</option>
+	           <option value="2">Metagenome Predictions + NSTI Sample Summary</option>
        	</param>
   </inputs>
   <outputs>
@@ -28,21 +30,23 @@
         </data>
   </outputs>
   <help>
-Run PICRUSt: Prediction of Metagenomes
+Run PICRUSt: Predict Metagenome
 --------------------------------------
-
-A brief description of the Predictions module.
+This module produces a 'virtual' metagenome of KEGG Ortholog abundances for each sample in the given OTU table. 
 
 **Input file:**
-This should be populated by the output of the Normalization OTUs module.
+This should be a normalized OTU table populated by the output of the PICRUSt:Normalize by Copy Number module.
 
-For more information please visit 
+For more information please visit:
+----------------------------------
+http://picrust.github.com/
 
 Citation and Contacts
 ---------------------
-
 When using PICRUSt please cite:
 
-Please feel free to contact us at  for any questions or comments!
+Questions/Comments can be send to:
+https://groups.google.com/d/forum/picrust-users
+
  </help>
 </tool>

@@ -1,5 +1,5 @@
-<tool id="PICRUSt_normalize" name="Normalize" version="1.0.1">
-<description>picrust</description>
+<tool id="PICRUSt_normalize" name="Normalize By Copy Number" version="0.9.0">
+<description></description>
 <command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/normalize_by_copy_number.py 
 -i /$inp_data 
 -o $out_file1
@@ -12,8 +12,8 @@
 </command>
   <inputs>
 	<param format="picrust" name="inp_data" type="data" label="Input file"/>
-	 <param name="input_type" type="select" multiple="True" display="checkboxes" label="Format of the input file">
- 		<option value="f">Legacy QIIME format(tab-delimited)</option>
+	 <param name="input_type" type="select" multiple="True" display="checkboxes" label="Format of the input file (default is BIOM)">
+ 		<option value="f">Legacy QIIME format (tab-delimited)</option>
 	</param>
   </inputs>
 
@@ -28,28 +28,34 @@ The PICRUSt project aims to support prediction of the unobserved character state
 
 **First Step**
 --------------
-Please **upload your input file** using the Standard Galaxy Upload Utility. (Get Data / Upload File from your computer)
-Be sure to select **File Format: picrust**
+Please ensure that you have properly created your OTU table to be compatible with PICRUSt by following this guide: http://picrust.github.com/picrust/methods/constructing_reference_otus.html
+
+Please **upload your OTU file** using the Standard Galaxy Upload Utility. (Get Data / Upload File from your computer)
 
 **Second Step**
 ---------------
-Run the PICRUSt Normalization by Number Module (This panel)
+Run 'Normalize by Copy Number' to correct your OTU table for multiple 16S copy number (this panel).   
 
-**Thid Step**
+**Third Step**
 ---------------
-Run the PICRUSt Prediction of Metagenomes Module
+Run the 'Predict Metagenome' on the output of the previous step (normalized OTU table) to get your metagenome predictions.
 
 
-A brief description of the Run Normalization module:
-----------------------------------------------------
+Description of PICRUSt: Normalize by Copy Number module
+-------------------------------------------------------
+This module corrects the abundance of each OTU to better reflect the true organism abundance by normalizing by PICRUSt's prediction of 16S copy number for each OTU.
 
 For more information please visit:
 ----------------------------------
+http://picrust.github.com/
+
 
 Citation and Contacts:
 ----------------------
 When using PICRUSt please cite:
 
-Please feel free to contact us at  for any questions or comments!
+Questions/Comments can be send to:
+https://groups.google.com/d/forum/picrust-users
+
  </help>
 </tool>
