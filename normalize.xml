@@ -30,7 +30,7 @@ The PICRUSt project aims to support prediction of the unobserved character state
 --------------
 Please ensure that you have properly created your OTU table to be compatible with PICRUSt by following this guide: http://picrust.github.com/picrust/methods/constructing_reference_otus.html
 
-Please **upload your OTU file** using the Standard Galaxy Upload Utility. (Get Data / Upload File from your computer)
+Please **upload your OTU file** using the Standard Galaxy Upload Utility. (Get Data / Upload File from your computer - Be sure to select file format **picrust**)
 
 A **sample file** can be downloaded from: https://raw.github.com/picrust/picrust/master/tutorials/hmp_mock_16S.tab 
 

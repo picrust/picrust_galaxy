@@ -1,0 +1,37 @@
+<tool id="PICRUSt_categorize" name="Categorize by function" version="0.9.1">
+<description></description>
+<command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/categorize_by_function.py  
+-i $inp_data
+-c "KEGG Pathways"
+-l $SelectionNumber
+-o $out_file1
+
+</command>
+  <inputs>
+	<param format="picrustp" name="inp_data" type="data" label="Input file"/>
+	<param name="SelectionNumber" type="integer" size="4" value="3" min="1" label="Integer Selected by the User"/>
+  </inputs>
+  <outputs>
+ 	<data format="picrustc" name="out_file1" />
+  </outputs>
+  <help>
+Run PICRUSt: Categorize by Function
+-----------------------------------
+This module produces...........................
+
+**Input file:**
+This should be .....  which is generated in the predict process
+
+For more information please visit:
+----------------------------------
+http://picrust.github.com/
+
+Citation and Contacts
+---------------------
+When using PICRUSt please cite:
+
+Questions/Comments can be send to:
+https://groups.google.com/d/forum/picrust-users
+
+ </help>
+</tool>
