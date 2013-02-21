@@ -25,6 +25,7 @@ This describes the steps of getting PICRUSt installed in Galaxy.
           <section name="PICRUSt" id="PICRUSt">
                <tool file="picrust_galaxy/normalize.xml"/>
                <tool file="picrust_galaxy/predict.xml"/>
+               <tool file="picrust_galaxy/categorize.xml"/>
           </section>
 
 7. Add the following to the file **galaxy-dist/datatypes_conf.xml**:
@@ -32,6 +33,7 @@ This describes the steps of getting PICRUSt installed in Galaxy.
           <datatype extension="picrust" type="galaxy.datatypes.binary:Binary" subclass="true" display_in_upload="true"/>
           <datatype extension="picrustn" type="galaxy.datatypes.data:Text" subclass="true" display_in_upload="true"/>
           <datatype extension="picrustp" type="galaxy.datatypes.data:Text" subclass="true" display_in_upload="true"/>
+          <datatype extension="picrustc" type="galaxy.datatypes.data:Text" subclass="true" display_in_upload="true"/>
 
 8. Restart galaxy
 

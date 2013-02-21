@@ -1,4 +1,4 @@
-<tool id="PICRUSt_predict" name="Predict Metagenome" version="0.9.1">
+<tool id="PICRUSt_predict" name="Predict Metagenome" version="0.9.1dev">
 <description></description>
 <command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/predict_metagenomes.py 
 -i $inp_data

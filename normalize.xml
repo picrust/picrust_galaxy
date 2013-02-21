@@ -1,4 +1,4 @@
-<tool id="PICRUSt_normalize" name="Normalize By Copy Number" version="0.9.1">
+<tool id="PICRUSt_normalize" name="Normalize By Copy Number" version="0.9.1dev">
 <description></description>
 <command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/normalize_by_copy_number.py 
 -i /$inp_data 
@@ -10,7 +10,7 @@
 
 </command>
   <inputs>
-	<param format="picrust" name="inp_data" type="data" label="Input file"/>
+	<param format="picrust" name="inp_data" type="data" label="Input file - Please upload using the standard Galaxy 'Get Data' - Be sure to select file format 'picrust' for the input file"/>
 	 <param name="input_type" type="select"  label="Format of the input file (default is Legacy QIIME format - tab delimited)">
 		<option value="f" selected='True'>Legacy QIIME format (tab-delimited)</option>
  		<option value=" ">BIOM  format</option>
@@ -30,7 +30,12 @@ The PICRUSt project aims to support prediction of the unobserved character state
 --------------
 Please ensure that you have properly created your OTU table to be compatible with PICRUSt by following this guide: http://picrust.github.com/picrust/methods/constructing_reference_otus.html
 
-Please **upload your OTU file** using the Standard Galaxy Upload Utility. (Get Data / Upload File from your computer - Be sure to select file format **picrust**)
+Please **upload your OTU file** using the Standard Galaxy Upload Utility. (Get Data / Upload File from your computer)
+
+
+.. class:: infomark
+
+Please be sure to select file format **picrust** for the input file.
 
 A **sample file** can be downloaded from: https://raw.github.com/picrust/picrust/master/tutorials/hmp_mock_16S.tab 
 
