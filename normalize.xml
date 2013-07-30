@@ -1,8 +1,10 @@
-<tool id="PICRUSt_normalize" name="Normalize By Copy Number" version="0.9.1dev">
+<tool id="PICRUSt_normalize" name="Normalize By Copy Number" version="0.9.2dev">
 <description></description>
 <command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/normalize_by_copy_number.py 
 -i /$inp_data 
 -o $out_file1
+-g $gg_version
+
 #if str( $input_type ) == "f":
 	-$input_type	
 #end if
@@ -15,6 +17,12 @@
 		<option value="f" selected='True'>Legacy QIIME format (tab-delimited)</option>
  		<option value=" ">BIOM  format</option>
 	</param>
+
+	<param name="gg_version" type="select"  label="GreenGenes Version (used to generate your OTU table)">
+		<option value="13_5" selected='True'>GG 13.5</option>
+ 		<option value="18may2012" >GG 18may2012</option>
+	</param>
+
   </inputs>
 
   <outputs>

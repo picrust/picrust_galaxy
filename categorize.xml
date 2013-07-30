@@ -1,8 +1,8 @@
-<tool id="PICRUSt_categorize" name="Categorize by function" version="0.9.1dev">
+<tool id="PICRUSt_categorize" name="Categorize by function" version="0.9.2dev">
 <description></description>
 <command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/categorize_by_function.py  
 -i $inp_data
--c "KEGG Pathways"
+-c "KEGG_Pathways"
 -l $SelectionNumber
 -o $out_file1
 #if str( $tool_option1 ) == "2":
