@@ -1,28 +1,26 @@
-<tool id="PICRUSt_categorize" name="Categorize by function" version="0.9.2dev">
+<tool id="PICRUSt_categorize" name="Categorize by Function" version="1.1.0">
 <description></description>
-<command interpreter="python">$GALAXY_ROOT_DIR/tools/picrust_galaxy/categorize_by_function.py  
--i $inp_data
--c "KEGG_Pathways"
--l $SelectionNumber
--o $out_file1
-#if str( $tool_option1 ) == "2":
-	-f	
-#end if
 
+<command interpreter="python" detect_errors="aggressive">
+
+$GALAXY_ROOT_DIR/tools/picrust_galaxy/categorize_by_function.py  -i $inp_data -c $meta -l $SelectionNumber -o $out_file1
 
 </command>
   <inputs>
-	<param format="picrustp" name="inp_data" type="data" label="Input file"/>
-	<param name="SelectionNumber" type="integer" size="4" value="3" min="1" label="KEGG Pathway Hierarchy Level"/>
-	<param name="tool_option1" type="select" label="Type of output">
-		<option value="1">BIOM</option>
-		<option value="2">Legacy QIIME format (tab-delimited)</option>
-      	</param>
-  </inputs>
+	<param format="biom" name="inp_data" type="data" label="Input file"/>
+
+	<param name="SelectionNumber" type="integer" size="4" value="3" min="1" label="Pathway Hierarchy Level"/>
+
+	<param name="meta" type="select"  label="Metadata category that describes hierarchy (NOTE: RFAM categories cannot be collapsed).">
+		<option value="KEGG_Pathways" selected='True'>KEGG Pathways</option>
+ 		<option value="COG_Category" >COG Category</option>		
+	</param>
+ </inputs>
   <outputs>
-	<data format="picrustc" name="out_file1" />
+	<data format="biom" name="out_file1" />
   </outputs>
   <help>
+
 Run PICRUSt: Categorize by Function
 -----------------------------------
 This module collapses hierarchical data to a specified level for PICRUSt predictions. For instance, often it is useful to examine KEGG results from a higher level within the pathway hierarchy. 
@@ -38,7 +36,7 @@ http://picrust.github.com/
 
 Citation and Contacts
 ---------------------
-When using PICRUSt please cite:
+When using PICRUSt please cite: Predictive functional profiling of microbial communities using 16S rRNA marker gene sequences. Langille, M. G.I.; Zaneveld, J.; Caporaso, J. G.; McDonald, D.; Knights, D.; a Reyes, J.; Clemente, J. C.; Burkepile, D. E.; Vega Thurber, R. L.; Knight, R.; Beiko, R. G.; and Huttenhower, C. Nature Biotechnology, 1-10. 8 2013.
 
 Questions/Comments can be send to:
 https://groups.google.com/d/forum/picrust-users
