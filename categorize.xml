@@ -1,4 +1,4 @@
-<tool id="PICRUSt_categorize" name="Categorize by Function" version="1.1.0">
+<tool id="PICRUSt_categorize" name="Categorize by Function" version="1.1.1">
 <description></description>
 
 <command interpreter="python" detect_errors="aggressive">
