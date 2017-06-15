@@ -1,0 +1,51 @@
+<tool id="PICRUSt_metagenome_category" name="Metagenome Contributions By Higher Category" version="1.1.1">
+<description></description>
+
+<command interpreter="python" detect_errors="aggressive">
+$GALAXY_ROOT_DIR/tools/picrust_galaxy/metagenome_contributions.py -i $inp_data -o $out_file1 -t $type_of_prediction -g $gg_version -f "$limit"
+</command>
+  <inputs>
+	<param format="biom" name="inp_data" type="data" label="Input file - Please upload using the standard Galaxy 'Get Data' - Be sure to select file format 'biom' for the input file. This should be the output of the Normalize by Copy Number command."/>
+	<param name="gg_version" type="select" optional="true"  label="GreenGenes Version (used to generate your OTU table)">
+		<option value="13_5" selected='True'>GG 13.5</option>
+ 		<option value="18may2012" >GG 18may2012</option>
+	</param>
+
+	<param name="limit" format="txt" type="text" label="Limit to specified functional category (required in galaxy version). Note you can only limit to one functional category at a time in this version."/>
+
+	<param name="type_of_prediction" type="select" optional="true"  label="Type of functional predictions">
+		<option value="ko" selected='True'>KEGG</option>
+ 		<option value="cog" >COG</option>
+		<option value="rfam" >RFAM</option>
+	</param>
+	
+  </inputs>
+
+  <outputs>
+    <data format="txt" name="out_file1" />
+  </outputs>
+
+  <help>
+
+PICRUSt: Phylogenetic Investigation of Communities by Reconstruction of Unobserved States
+-----------------------------------------------------------------------------------------
+The PICRUSt project aims to support prediction of the unobserved character states in a community of organisms from phylogenetic information about the organisms in that community. The primary application is to predict gene family abundance (e.g. the metagenome) in environmental DNA samples for which only marker gene (e.g. 16S rRNA gene) data are available. This is an open source, international, collaborative bioinformatics project developed in the Huttenhower, Beiko, Langille, Vega Thurber, Knight and Caporaso labs.
+
+Description of PICRUSt: Metagenome Contributions By Higher Category module
+-------------------------------------------------------
+This module will output the breakdown of which OTUs are contributing to the abundance of functional categories in each sample. This tool is used for limiting to a higher level category like "Alanine, aspartate and glutamate metabolism" rather than individual KEGG ortholog ids.
+
+For more information please visit:
+----------------------------------
+http://picrust.github.com/
+
+
+Citation and Contacts:
+----------------------
+When using PICRUSt please cite: Predictive functional profiling of microbial communities using 16S rRNA marker gene sequences. Langille, M. G.I.; Zaneveld, J.; Caporaso, J. G.; McDonald, D.; Knights, D.; a Reyes, J.; Clemente, J. C.; Burkepile, D. E.; Vega Thurber, R. L.; Knight, R.; Beiko, R. G.; and Huttenhower, C. Nature Biotechnology, 1-10. 8 2013.
+
+Questions/Comments can be send to:
+https://groups.google.com/d/forum/picrust-users
+
+ </help>
+</tool>
