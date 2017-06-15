@@ -32,8 +32,9 @@ This describes the steps of getting PICRUSt installed in Galaxy.
         <tool file="picrust_galaxy/normalize.xml"/>  
         <tool file="picrust_galaxy/predict.xml"/>  
         <tool file="picrust_galaxy/categorize.xml"/>  
-        <tool file="picrust_galaxy/metagenome.xml"/>  
-    </section>  
+        <tool file="picrust_galaxy/metagenome_gene_family.xml"/>
+        <tool file="picrust_galaxy/metagenome_func_category.xml"/>
+   </section>  
     ```
 
 7. Add the following to the file **galaxy-dist/datatypes_conf.xml**:
