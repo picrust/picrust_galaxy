@@ -1,4 +1,4 @@
-<tool id="PICRUSt_metagenome_category" name="Metagenome Contributions By Higher Category" version="1.1.1">
+<tool id="PICRUSt_metagenome_category" name="Metagenome Contributions by Higher Category" version="1.1.1">
 <description></description>
 
 <command interpreter="python" detect_errors="aggressive">
@@ -31,8 +31,8 @@ PICRUSt: Phylogenetic Investigation of Communities by Reconstruction of Unobserv
 -----------------------------------------------------------------------------------------
 The PICRUSt project aims to support prediction of the unobserved character states in a community of organisms from phylogenetic information about the organisms in that community. The primary application is to predict gene family abundance (e.g. the metagenome) in environmental DNA samples for which only marker gene (e.g. 16S rRNA gene) data are available. This is an open source, international, collaborative bioinformatics project developed in the Huttenhower, Beiko, Langille, Vega Thurber, Knight and Caporaso labs.
 
-Description of PICRUSt: Metagenome Contributions By Higher Category module
--------------------------------------------------------
+Description of PICRUSt: Metagenome Contributions by Higher Category module
+--------------------------------------------------------------------------
 This module will output the breakdown of which OTUs are contributing to the abundance of functional categories in each sample. This tool is used for limiting to a higher level category like "Alanine, aspartate and glutamate metabolism" rather than individual KEGG ortholog ids.
 
 For more information please visit:
